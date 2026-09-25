@@ -24,12 +24,12 @@ Power BI Dashboard
 
 ## Tech Stack
 
-- SQL Server
-- SQL Server Management Studio
-- SQL Server Integration Services (SSIS)
-- SQL
-- Power BI
-- Python
+- **SQL Server** — staging, data warehouse, and data marts
+- **SSIS** — ETL orchestration and CSV ingestion
+- **SQL** — data quality checks, cleansing, transformation, and loading
+- **Power BI** — reporting and dashboard
+- **Python** — synthetic data generation
+- **Git & GitHub** — version control and documentation
 
 ## Dataset
 
@@ -61,6 +61,12 @@ Some of the issues identified during profiling:
 The raw records are kept in the staging layer, while only valid transactions are loaded into the final fact table.
 
 More details are available in [`docs/data_quality_findings.md`](docs/data_quality_findings.md).
+
+### Data Quality Profiling
+
+The raw datasets were profiled in SQL Server before transformation to identify duplicates, missing values, invalid references, and inconsistent values.
+
+![Data Quality Checks](screenshots/data-quality-checks.png)
 
 ## Data Warehouse
 
