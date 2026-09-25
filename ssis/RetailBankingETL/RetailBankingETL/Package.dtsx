@@ -1,0 +1,2638 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/24/2026 7:40:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-FETJG4H"
+  DTS:CreatorName="DESKTOP-FETJG4H\DELL"
+  DTS:DTSID="{FF7D7B89-6899-4E13-B661-E54EDCC7CFBA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{55930EA0-5EDA-41E7-A206-DF9741561142}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_FlatFile_Accounts]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AFC6C7DE-0838-44F9-B262-A3B8111E5AC8}"
+      DTS:ObjectName="CM_FlatFile_Accounts">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\SKRIPSI\PORTFOLIO\retail-banking-data-pipeline\data\raw\accounts.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_id"
+              DTS:DTSID="{7078F866-BA7A-41AE-88BD-9C53A5D330B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_id"
+              DTS:DTSID="{351AAABF-2B4F-48CE-AB68-95CA6D6DEC63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_type"
+              DTS:DTSID="{7AB36D67-1463-4D4F-BC84-D6CB5A70F2B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="opening_date"
+              DTS:DTSID="{221ADC9F-C52B-4A71-A092-650B2BCC6537}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{BE831697-648D-4635-97F4-B6E07CE61CBE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_FlatFile_Customers]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A163AD9E-2089-4536-A7C6-B427AF9C9298}"
+      DTS:ObjectName="CM_FlatFile_Customers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\SKRIPSI\PORTFOLIO\retail-banking-data-pipeline\data\raw\customers.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_id"
+              DTS:DTSID="{32495B42-EC9E-412F-8E78-94B00C0DCA71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_name"
+              DTS:DTSID="{664DE2C7-C7C5-4453-930C-38DF5D09F6CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{CCFE5A6B-0476-471F-A714-A45D571B0017}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="registration_date"
+              DTS:DTSID="{A673725B-17ED-4114-95DD-629D06E37E61}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_FlatFile_Transactions]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{248C9588-2994-4A73-85B3-B29610128571}"
+      DTS:ObjectName="CM_FlatFile_Transactions">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\SKRIPSI\PORTFOLIO\retail-banking-data-pipeline\data\raw\transactions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="transaction_id"
+              DTS:DTSID="{0FC693E5-4577-4DC8-A8A8-8FFB57E0D1C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="account_id"
+              DTS:DTSID="{F7172C7C-ACC1-42A7-AD72-E820B369AC7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="transaction_date"
+              DTS:DTSID="{A92C7E2D-4FF3-4C3E-8441-37C8BAB6610F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="transaction_type"
+              DTS:DTSID="{9BABB3E8-E71C-4270-AFD4-E2CCF70DB3D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="amount"
+              DTS:DTSID="{A37AC557-43A3-4F7A-9BE8-8B797751D552}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+      DTS:ObjectName="CM_SQLServer_RetailBanking">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=retail_banking_dw;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}localhost.retail_banking_dw;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear Accounts Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DD5C6516-C8B9-4221-A3AB-554F70238BBE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear Accounts Staging"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.accounts;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clear Customers Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Truncate customer staging table before load"
+      DTS:DTSID="{0F8DB3D0-7E65-420A-BB42-B30C6E982F7A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear Customers Staging"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.customers;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clear Transactions Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E4EF2F7A-C4F4-4DC5-8C30-91DDB3E6CED6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear Transactions Staging"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stg.transactions;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Account Dimension"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1B02A159-270C-403B-AA09-1D160BEAFDC9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Account Dimension"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="INSERT INTO dw.dim_account (&#xA;    account_id,&#xA;    customer_key,&#xA;    account_type,&#xA;    opening_date,&#xA;    [status]&#xA;)&#xA;SELECT&#xA;    LTRIM(RTRIM(stg.accounts.account_id)),&#xA;    dw.dim_customer.customer_key,&#xA;    UPPER(LTRIM(RTRIM(stg.accounts.account_type))),&#xA;    TRY_CONVERT(&#xA;        DATE,&#xA;        LTRIM(RTRIM(REPLACE(stg.accounts.opening_date, CHAR(13), ''))),&#xA;        23&#xA;    ),&#xA;    UPPER(&#xA;        LTRIM(&#xA;            RTRIM(&#xA;                REPLACE(stg.accounts.[status], CHAR(13), '')&#xA;            )&#xA;        )&#xA;    )&#xA;FROM stg.accounts&#xA;LEFT JOIN dw.dim_customer&#xA;    ON LTRIM(RTRIM(stg.accounts.customer_id))&#xA;       = dw.dim_customer.customer_id&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM dw.dim_account&#xA;    WHERE dw.dim_account.account_id&#xA;          = LTRIM(RTRIM(stg.accounts.account_id))&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Accounts to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A1E10A10-A747-4C3F-ADF0-D2860E3D3B22}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Accounts to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Accounts to Staging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[account_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_id"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[account_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_type"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_type]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[opening_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="opening_date"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[opening_date]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="status"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]"
+                      name="account_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      name="customer_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_type_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_type_unicode]"
+                      name="account_type_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[opening_date_unicod]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[opening_date_unicod]"
+                      name="opening_date_unicod"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[opening_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[status_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[status_unicode]"
+                      name="status_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_FlatFile_Accounts]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_FlatFile_Accounts]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_id]"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]"
+                      name="account_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_type]"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_type]"
+                      name="account_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[opening_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[opening_date]"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[opening_date]"
+                      name="opening_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      length="50"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[opening_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="opening_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[accounts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="account_id_unicode"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_id]"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_id_unicode"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_type_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="account_type_unicode"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_type]"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_type_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[opening_date_unicod]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="opening_date_unicod"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[opening_date]"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[opening_date_unicod]" />
+                    <inputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[status_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="status_unicode"
+                      externalMetadataColumnId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[status_unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="account_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="account_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[opening_date]"
+                      dataType="wstr"
+                      length="50"
+                      name="opening_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Accounts to Staging.Paths[Data Conversion Output]"
+              endId="Package\Load Accounts to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Accounts to Staging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Accounts to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load Accounts to Staging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Accounts to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Customer Dimension"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{428BE4BE-610F-474C-88AD-A3B9681C750B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customer Dimension"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource=";WITH cleaned_customer AS (&#xA;    SELECT&#xA;        LTRIM(RTRIM(customer_id)) AS customer_id,&#xA;        LTRIM(RTRIM(customer_name)) AS customer_name,&#xA;        UPPER(LTRIM(RTRIM(city))) AS city,&#xA;        TRY_CONVERT(&#xA;            DATE,&#xA;            LTRIM(RTRIM(REPLACE(registration_date, CHAR(13), ''))),&#xA;            23&#xA;        ) AS registration_date&#xA;    FROM stg.customers&#xA;),&#xA;ranked_customer AS (&#xA;    SELECT *,&#xA;           ROW_NUMBER() OVER (&#xA;               PARTITION BY customer_id&#xA;               ORDER BY customer_id&#xA;           ) AS rn&#xA;    FROM cleaned_customer&#xA;)&#xA;INSERT INTO dw.dim_customer (&#xA;    customer_id,&#xA;    customer_name,&#xA;    city,&#xA;    registration_date&#xA;)&#xA;SELECT&#xA;    customer_id,&#xA;    customer_name,&#xA;    city,&#xA;    registration_date&#xA;FROM ranked_customer&#xA;WHERE rn = 1&#xA;  AND NOT EXISTS (&#xA;      SELECT 1&#xA;      FROM dw.dim_customer AS existing&#xA;      WHERE existing.customer_id = ranked_customer.customer_id&#xA;  );" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Customers to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0511C55F-74DB-40DB-B18E-CBD03CA956C7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customers to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Customers to Staging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_id"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[customer_name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customer_name"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[registration_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="registration_date"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registration_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      name="customer_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_name_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_name_unicode]"
+                      name="customer_name_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]"
+                      name="city_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[registration_date_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[registration_date_unicode]"
+                      name="registration_date_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registration_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_FlatFile_Customers]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_FlatFile_Customers]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]"
+                      name="customer_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registration_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[registration_date]"
+                      length="50"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[registration_date]"
+                      name="registration_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[registration_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="registration_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customers to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[customers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_id_unicode"
+                      externalMetadataColumnId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_name_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="customer_name_unicode"
+                      externalMetadataColumnId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[customer_name_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[city_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="city_unicode"
+                      externalMetadataColumnId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[city_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[registration_date_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="registration_date_unicode"
+                      externalMetadataColumnId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[registration_date]"
+                      lineageId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[registration_date_unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="100"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[registration_date]"
+                      dataType="wstr"
+                      length="50"
+                      name="registration_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Customers to Staging.Paths[Data Conversion Output]"
+              endId="Package\Load Customers to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Customers to Staging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Customers to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load Customers to Staging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Customers to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Fact Transactions"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{39A9FEF9-8935-428F-892E-D6396B246C34}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Fact Transactions"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource=";WITH cleaned_transaction AS (&#xA;    SELECT&#xA;        LTRIM(RTRIM(transaction_id)) AS transaction_id,&#xA;        LTRIM(RTRIM(account_id)) AS account_id,&#xA;&#xA;        COALESCE(&#xA;            TRY_CONVERT(&#xA;                DATE,&#xA;                LTRIM(RTRIM(transaction_date)),&#xA;                23&#xA;            ),&#xA;            TRY_CONVERT(&#xA;                DATE,&#xA;                LTRIM(RTRIM(transaction_date)),&#xA;                103&#xA;            )&#xA;        ) AS transaction_date,&#xA;&#xA;        UPPER(&#xA;            LTRIM(RTRIM(transaction_type))&#xA;        ) AS transaction_type,&#xA;&#xA;        TRY_CONVERT(&#xA;            DECIMAL(18,2),&#xA;            NULLIF(&#xA;                LTRIM(&#xA;                    RTRIM(&#xA;                        REPLACE(amount, CHAR(13), '')&#xA;                    )&#xA;                ),&#xA;                ''&#xA;            )&#xA;        ) AS amount&#xA;&#xA;    FROM stg.transactions&#xA;),&#xA;&#xA;ranked_transaction AS (&#xA;    SELECT&#xA;        *,&#xA;        ROW_NUMBER() OVER (&#xA;            PARTITION BY transaction_id&#xA;            ORDER BY transaction_date, account_id&#xA;        ) AS rn&#xA;    FROM cleaned_transaction&#xA;)&#xA;&#xA;INSERT INTO dw.fact_transaction (&#xA;    transaction_id,&#xA;    account_key,&#xA;    transaction_date,&#xA;    transaction_type,&#xA;    amount&#xA;)&#xA;SELECT&#xA;    t.transaction_id,&#xA;    a.account_key,&#xA;    t.transaction_date,&#xA;    t.transaction_type,&#xA;    t.amount&#xA;FROM ranked_transaction AS t&#xA;&#xA;INNER JOIN dw.dim_account AS a&#xA;    ON t.account_id = a.account_id&#xA;&#xA;WHERE t.rn = 1&#xA;  AND t.transaction_date IS NOT NULL&#xA;  AND t.amount IS NOT NULL&#xA;  AND t.amount &gt; 0&#xA;  AND t.transaction_type IN (&#xA;      'DEPOSIT',&#xA;      'WITHDRAWAL',&#xA;      'TRANSFER'&#xA;  )&#xA;  AND NOT EXISTS (&#xA;      SELECT 1&#xA;      FROM dw.fact_transaction AS existing&#xA;      WHERE existing.transaction_id = t.transaction_id&#xA;  );" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Transactions to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{82087D4E-D3BE-4B08-AD5E-4C873C6C7EE3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Transactions to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Transactions to Staging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[transaction_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_id"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_id]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[account_id]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="account_id"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[transaction_date]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_date"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_date]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[transaction_type]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="transaction_type"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input].Columns[amount]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="amount"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_id_unicode]"
+                      name="transaction_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]"
+                      name="account_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_date_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_date_unicode]"
+                      name="transaction_date_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_type_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_type_unicode]"
+                      name="transaction_type_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[amount_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[amount_unicode]"
+                      name="amount_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[amount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Transactions to Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Transactions to Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_FlatFile_Transactions]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_FlatFile_Transactions]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_id]"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_id]"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[account_id]"
+                      name="account_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_date]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_date]"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_date]"
+                      name="transaction_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_type]"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[transaction_type]"
+                      name="transaction_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[amount]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[amount]"
+                      length="50"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[amount]"
+                      name="amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[account_id]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="account_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_date]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="transaction_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[transaction_type]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="transaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[amount]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="amount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Transactions to Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg].[transactions]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Transactions to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_SQLServer_RetailBanking]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="transaction_id_unicode"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[account_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="account_id_unicode"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_id]"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[account_id_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_date_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="transaction_date_unicode"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_date]"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_date_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[transaction_type_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="transaction_type_unicode"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_type]"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[transaction_type_unicode]" />
+                    <inputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[amount_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="amount_unicode"
+                      externalMetadataColumnId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output].Columns[amount_unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[account_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="account_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_date]"
+                      dataType="wstr"
+                      length="50"
+                      name="transaction_date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[transaction_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="transaction_type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="wstr"
+                      length="50"
+                      name="amount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Transactions to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Transactions to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Transactions to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Transactions to Staging.Paths[Data Conversion Output]"
+              endId="Package\Load Transactions to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Transactions to Staging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Transactions to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load Transactions to Staging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Transactions to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Refresh Customer Transaction Mart"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0615E30B-496A-4DCC-91BA-402E7E71C273}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Refresh Customer Transaction Mart"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="DELETE FROM mart.customer_transaction_summary;&#xA;&#xA;INSERT INTO mart.customer_transaction_summary (&#xA;    customer_key,&#xA;    customer_id,&#xA;    customer_name,&#xA;    city,&#xA;    total_accounts,&#xA;    total_transactions,&#xA;    total_deposit_amount,&#xA;    total_withdrawal_amount,&#xA;    total_transfer_amount,&#xA;    total_transaction_amount,&#xA;    first_transaction_date,&#xA;    last_transaction_date&#xA;)&#xA;SELECT&#xA;    c.customer_key,&#xA;    c.customer_id,&#xA;    c.customer_name,&#xA;    c.city,&#xA;&#xA;    COUNT(DISTINCT a.account_key) AS total_accounts,&#xA;    COUNT(f.transaction_key) AS total_transactions,&#xA;&#xA;    COALESCE(&#xA;        SUM(&#xA;            CASE&#xA;                WHEN f.transaction_type = 'DEPOSIT'&#xA;                THEN f.amount&#xA;                ELSE 0&#xA;            END&#xA;        ),&#xA;        0&#xA;    ) AS total_deposit_amount,&#xA;&#xA;    COALESCE(&#xA;        SUM(&#xA;            CASE&#xA;                WHEN f.transaction_type = 'WITHDRAWAL'&#xA;                THEN f.amount&#xA;                ELSE 0&#xA;            END&#xA;        ),&#xA;        0&#xA;    ) AS total_withdrawal_amount,&#xA;&#xA;    COALESCE(&#xA;        SUM(&#xA;            CASE&#xA;                WHEN f.transaction_type = 'TRANSFER'&#xA;                THEN f.amount&#xA;                ELSE 0&#xA;            END&#xA;        ),&#xA;        0&#xA;    ) AS total_transfer_amount,&#xA;&#xA;    COALESCE(SUM(f.amount), 0) AS total_transaction_amount,&#xA;&#xA;    MIN(f.transaction_date) AS first_transaction_date,&#xA;    MAX(f.transaction_date) AS last_transaction_date&#xA;&#xA;FROM dw.dim_customer AS c&#xA;&#xA;LEFT JOIN dw.dim_account AS a&#xA;    ON c.customer_key = a.customer_key&#xA;&#xA;LEFT JOIN dw.fact_transaction AS f&#xA;    ON a.account_key = f.account_key&#xA;&#xA;GROUP BY&#xA;    c.customer_key,&#xA;    c.customer_id,&#xA;    c.customer_name,&#xA;    c.city;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Refresh Monthly Transaction Mart"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{65C62E7B-3A95-4327-A744-C051FBAEE173}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Refresh Monthly Transaction Mart"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DCC2CF11-0F9F-4E92-88EA-1D6F2FD73CC2}"
+          SQLTask:SqlStatementSource="DELETE FROM mart.monthly_transaction_summary;&#xA;&#xA;INSERT INTO mart.monthly_transaction_summary (&#xA;    month_start_date,&#xA;    city,&#xA;    transaction_type,&#xA;    total_transactions,&#xA;    total_amount,&#xA;    avg_transaction_amount&#xA;)&#xA;SELECT&#xA;    DATEFROMPARTS(&#xA;        YEAR(dw.fact_transaction.transaction_date),&#xA;        MONTH(dw.fact_transaction.transaction_date),&#xA;        1&#xA;    ),&#xA;    COALESCE(dw.dim_customer.city, 'UNKNOWN'),&#xA;    dw.fact_transaction.transaction_type,&#xA;    COUNT(*),&#xA;    SUM(dw.fact_transaction.amount),&#xA;    CAST(&#xA;        AVG(dw.fact_transaction.amount)&#xA;        AS DECIMAL(18,2)&#xA;    )&#xA;FROM dw.fact_transaction&#xA;INNER JOIN dw.dim_account&#xA;    ON dw.fact_transaction.account_key = dw.dim_account.account_key&#xA;LEFT JOIN dw.dim_customer&#xA;    ON dw.dim_account.customer_key = dw.dim_customer.customer_key&#xA;GROUP BY&#xA;    DATEFROMPARTS(&#xA;        YEAR(dw.fact_transaction.transaction_date),&#xA;        MONTH(dw.fact_transaction.transaction_date),&#xA;        1&#xA;    ),&#xA;    COALESCE(dw.dim_customer.city, 'UNKNOWN'),&#xA;    dw.fact_transaction.transaction_type;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF97D74E-EAF3-4232-881F-9C9D9FEFE88A}"
+      DTS:From="Package\Clear Customers Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Customers to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1344666D-D2EE-42DE-BBCC-56D4B0AF2421}"
+      DTS:From="Package\Load Customers to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Clear Accounts Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2678361B-758F-4B6D-BC1E-74BD477625AB}"
+      DTS:From="Package\Clear Accounts Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Accounts to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9DC466F1-01A9-450A-BB94-567F85DD20EE}"
+      DTS:From="Package\Load Accounts to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Clear Transactions Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D2CBEC92-6495-43B5-8BCC-CB313C7F2DAC}"
+      DTS:From="Package\Clear Transactions Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Load Transactions to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{851DB523-FBEF-4424-98A5-59D813B52181}"
+      DTS:From="Package\Load Transactions to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Load Customer Dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{F354E0E2-FFF0-43E6-A89E-D8769D4CEFD0}"
+      DTS:From="Package\Load Customer Dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Load Account Dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{200D2A71-D9EC-4DDE-981B-E02AED314C87}"
+      DTS:From="Package\Load Account Dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Load Fact Transactions" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{57E41C3A-B5D5-4232-8FD2-DF532F9DF51D}"
+      DTS:From="Package\Load Fact Transactions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Refresh Customer Transaction Mart" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{3D6BB929-7CAE-4622-801E-C8371FF96EF2}"
+      DTS:From="Package\Refresh Customer Transaction Mart"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Refresh Monthly Transaction Mart" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Clear Accounts Staging"
+          TopLeft="64.2857107732976,226.447617472931" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Clear Customers Staging"
+          TopLeft="75.9523768025258,86.9142851098946" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Clear Transactions Staging"
+          TopLeft="57.6190444708819,371.780949817887" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Load Account Dimension"
+          TopLeft="534.774574043229,445.380950179488" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Load Accounts to Staging"
+          TopLeft="60.119044334288,296.647616984769" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Load Customer Dimension"
+          TopLeft="299.841253458666,445.447616116925" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Load Customers to Staging"
+          TopLeft="56.7857111830797,157.980951282372" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Load Fact Transactions"
+          TopLeft="758.101810430995,444.768515425654" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\Load Transactions to Staging"
+          TopLeft="55.9523778952778,444.580949311644" />
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\Refresh Customer Transaction Mart"
+          TopLeft="724.999960387748,534.083329619384" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="157.369043992803,128.514285109895">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4666661724778"
+              Start="0,0"
+              End="0,21.9666661724778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9666661724778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="158.335710978189,199.580951282372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.8666661905582"
+              Start="0,0"
+              End="0,19.3666661905582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3666661905582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="158.202377553793,268.047617472931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5999995118381"
+              Start="0,0"
+              End="0,21.0999995118381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0999995118381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="159.069044402585,338.247616984769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.533332833118"
+              Start="0,0"
+              End="0,26.033332833118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.033332833118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="161.18571118308,413.380949817887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1999994937578"
+              Start="0,0"
+              End="0,23.6999994937578">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999994937578" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="269.552377895278,465.814282714285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.2888755633881,0"
+              Start="0,0"
+              End="22.7888755633881,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.7888755633881,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="501.441253458666,466.214283148206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.3333205845628,0"
+              Start="0,0"
+              End="25.8333205845628,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.8333205845628,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="728.374574043229,465.874732802571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.7272363877663,0"
+              Start="0,0"
+              End="22.2272363877663,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.2272363877663,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="849.150885409372,486.368515425654">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7148141937307"
+              Start="0,0"
+              End="0,40.2148141937307">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2148141937307" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\Refresh Monthly Transaction Mart"
+          TopLeft="727.777738013755,612.444440185582" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="845.788849200752,575.683329619384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.7611105661983"
+              Start="0,0"
+              End="0,29.2611105661983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2611105661983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Accounts to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Accounts to Staging\Flat File Source"
+          TopLeft="128.99999807775,137.99999794364" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Accounts to Staging\Data Conversion"
+          TopLeft="371.999994456768,133.999998003244" />
+        <EdgeLayout
+          Id="Package\Load Accounts to Staging.Paths[Flat File Source Output]"
+          TopLeft="280.19999807775,156.799997973442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.7999963790178,0"
+              Start="0,0"
+              End="84.2999963790178,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.2999963790178,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Accounts to Staging\OLE DB Destination"
+          TopLeft="597.999991089106,129.999998062849" />
+        <EdgeLayout
+          Id="Package\Load Accounts to Staging.Paths[Data Conversion Output]"
+          TopLeft="527.999994456768,152.799998033047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.9999966323377,0"
+              Start="0,0"
+              End="62.4999966323377,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.4999966323377,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Accounts to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Customers to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Customers to Staging\Flat File Source"
+          TopLeft="107.499994126459,154.266665593916" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Customers to Staging\Data Conversion"
+          TopLeft="311.666649637952,153.399998933276" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Customers to Staging\OLE DB Destination"
+          TopLeft="516.333305422632,151.966665648156" />
+        <EdgeLayout
+          Id="Package\Load Customers to Staging.Paths[Flat File Source Output]"
+          TopLeft="258.699994126459,174.633332263596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.9666555114924,0"
+              Start="0,0"
+              End="45.4666555114924,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.4666555114924,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Customers to Staging.Paths[Data Conversion Output]"
+          TopLeft="467.666649637952,173.483332290716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.6666557846801,0"
+              Start="0,0"
+              End="41.1666557846801,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.1666557846801,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customers to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Transactions to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load Transactions to Staging\Flat File Source"
+          TopLeft="185.999997228384,116.999998256564" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Transactions to Staging\Data Conversion"
+          TopLeft="427.999993622303,115.999998271465" />
+        <EdgeLayout
+          Id="Package\Load Transactions to Staging.Paths[Flat File Source Output]"
+          TopLeft="337.199997228384,137.299998264015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.799996393919,0"
+              Start="0,0"
+              End="83.299996393919,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.299996393919,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Transactions to Staging\OLE DB Destination"
+          TopLeft="646.444434811671,113.444442753991" />
+        <EdgeLayout
+          Id="Package\Load Transactions to Staging.Paths[Data Conversion Output]"
+          TopLeft="583.999993622303,135.522220512728">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.4444411893685,0"
+              Start="0,0"
+              End="54.9444411893685,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.9444411893685,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Transactions to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
