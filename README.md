@@ -64,7 +64,7 @@ More details are available in [`docs/data_quality_findings.md`](docs/data_qualit
 
 ### Data Quality Profiling
 
-The raw datasets were profiled in SQL Server before transformation to identify duplicates, missing values, invalid references, and inconsistent values.
+The raw datasets were profiled before transformation to identify duplicate records, missing values, invalid references, and inconsistent formats.
 
 ![Data Quality Checks](screenshots/data-quality-checks.png)
 
