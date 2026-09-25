@@ -106,6 +106,9 @@ Refresh Reporting Marts
 ```
 
 The package can be rerun without duplicating existing warehouse records.
+The pipeline is orchestrated using SSIS to load raw CSV files into staging tables and continue the transformation process into the dimensional warehouse and reporting marts.
+
+![SSIS Control Flow](screenshots/ssis-control-flow.png)
 
 ## Power BI Dashboard
 
@@ -121,7 +124,13 @@ The final dashboard includes:
 - Top 10 customers by transaction amount
 - City filtering
 
-![Retail Banking Dashboard](images/dashboard.png)
+![Retail Banking Transaction Dashboard](screenshots/powerbi-dashboard.png)
+
+## Power BI Data Model
+
+A shared city dimension is used to filter both reporting marts consistently.
+
+![Power BI Data Model](screenshots/powerbi-data-model.png)
 
 ## Repository Structure
 
